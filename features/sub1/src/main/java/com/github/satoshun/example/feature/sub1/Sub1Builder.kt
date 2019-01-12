@@ -1,6 +1,5 @@
 package com.github.satoshun.example.feature.sub1
 
-import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -13,5 +12,5 @@ interface Sub1Builder
 internal interface Sub1ActivityModule {
   @ContributesAndroidInjector fun contributeSub1Activity(): Sub1Activity
 
-  @Binds fun bindSub1Router(impl: Sub1RouterImpl): Sub1Router
+//  @Binds fun bindSub1Router(impl: Sub1RouterImpl): Sub1Router
 }

@@ -1,14 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:dist="http://schemas.android.com/apk/distribution"
   package="com.github.satoshun.example.feature.main">
+
   <dist:module
     dist:instant="false"
-    dist:onDemand="false">
+    dist:onDemand="false"
+    dist:title="@string/main_name">
     <dist:fusing dist:include="true" />
   </dist:module>
 
   <application>
-    <activity android:name=".MainActivity" />
-    <!--android:label="@string/main_name" />-->
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
   </application>
 </manifest>

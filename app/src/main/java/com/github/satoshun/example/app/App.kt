@@ -1,5 +1,6 @@
-package com.github.satoshun.example
+package com.github.satoshun.example.app
 
+import com.github.satoshun.example.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 

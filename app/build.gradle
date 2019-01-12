@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 apply from: "${rootDir}/gradle/jetifier_shared.gradle"
 
@@ -41,13 +42,16 @@ android {
   dataBinding {
     enabled = true
   }
+
+  dynamicFeatures = [
+      ':main1'
+  ]
 }
 
 dependencies {
   implementation project(':router')
 
   implementation project(':main1-router')
-  implementation project(':main1')
 
   implementation project(':sub1-router')
   implementation project(':sub1')

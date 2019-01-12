@@ -1,7 +1,7 @@
 package com.github.satoshun.example
 
 import android.content.Context
-import com.github.satoshun.example.feature.main.MainBuilder
+import com.github.satoshun.example.app.App
 import com.github.satoshun.example.feature.sub1.Sub1Builder
 import dagger.BindsInstance
 import dagger.android.AndroidInjector
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 @dagger.Component(
   modules = [
     AndroidSupportInjectionModule::class,
-    MainBuilder::class,
+//    MainBuilder::class, // todo
     Sub1Builder::class
   ]
 )

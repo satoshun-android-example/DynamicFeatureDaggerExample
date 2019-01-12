@@ -9,7 +9,7 @@
     <dist:fusing dist:include="true" />
   </dist:module>
 
-  <application android:name="com.github.satoshun.example.app.App">
+  <application>
     <activity android:name="com.github.satoshun.example.feature.sub1.Sub1Activity">
       <intent-filter>
         <action android:name="android.intent.action.VIEW" />

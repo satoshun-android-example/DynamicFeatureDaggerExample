@@ -11,7 +11,6 @@ class AppActivity : AppCompatActivity() {
     setContentView(R.layout.app_act)
     button.setOnClickListener {
       val intent = MainRouter.routeTo(this)
-//      val intent = Sub1Router.routeTo(this)
       startActivity(intent)
     }
   }

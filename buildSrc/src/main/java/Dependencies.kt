@@ -1,6 +1,6 @@
 object Vers {
   const val compile_sdk = 28
-  const val min_sdk = 24
+  const val min_sdk = 25
   const val target_sdk = 28
 
   const val kotlin = "1.3.11"

@@ -3,8 +3,6 @@ package com.github.satoshun.example.feature.main
 import android.content.Context
 import android.content.Intent
 
-// todo more readable
-
 object AppRouter {
   fun routeTo(context: Context): Intent {
     val packageName = context.packageName

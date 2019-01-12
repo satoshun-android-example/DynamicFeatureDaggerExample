@@ -1,4 +1,4 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.dynamic-feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
@@ -14,6 +14,8 @@ android {
 }
 
 dependencies {
+  implementation project(':app')
+
   implementation project(':sub1-router')
   implementation project(':router')
 

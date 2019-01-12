@@ -1,0 +1,5 @@
+<resources>
+  <string name="sub1_name">Sub1 Activity</string>
+
+  <string name="sub1_back_to_main">BackToMain</string>
+</resources>

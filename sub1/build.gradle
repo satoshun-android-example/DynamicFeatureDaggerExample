@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "${rootDir}/gradle/jetifier_shared.gradle"
+
+android {
+  compileSdkVersion Vers.compile_sdk
+
+  defaultConfig {
+    minSdkVersion Vers.min_sdk
+  }
+}
+
+dependencies {
+  implementation project(':sub1-router')
+  implementation project(':router')
+
+  implementation project(':main1-router')
+
+  implementation Libs.kotlin
+
+  implementation Libs.appcompat
+  implementation Libs.constraintlayout
+
+  implementation Libs.dagger
+  kapt Libs.dagger_processor
+  implementation Libs.dagger_android
+  kapt Libs.dagger_android_processor
+  implementation Libs.dagger_android_support
+}

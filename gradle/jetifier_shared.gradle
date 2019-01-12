@@ -1,0 +1,5 @@
+android {
+  configurations.all {
+    resolutionStrategy.force "com.android.tools.build.jetifier:jetifier-core:1.0.0-beta02"
+  }
+}

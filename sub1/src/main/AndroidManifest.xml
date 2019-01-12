@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.github.satoshun.example.feature.sub1">
+
+  <application>
+    <activity
+      android:name=".Sub1Activity"
+      android:label="@string/sub1_name" />
+  </application>
+</manifest>

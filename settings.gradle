@@ -1,0 +1,11 @@
+include ':app'
+
+include ':main1'
+include ':main1-router'
+
+include ':sub1'
+include ':sub1-router'
+
+include ':router'
+
+//include ':di'

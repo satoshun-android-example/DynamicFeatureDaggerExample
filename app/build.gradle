@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: "${rootDir}/gradle/jetifier_shared.gradle"
+
+android {
+  compileSdkVersion Vers.compile_sdk
+
+  defaultConfig {
+    applicationId "com.github.satoshun.example"
+
+    minSdkVersion Vers.min_sdk
+    targetSdkVersion Vers.target_sdk
+    versionCode 1
+    versionName "1.0"
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled true
+      signingConfig signingConfigs.debug
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  signingConfigs {
+    debug {
+      storeFile rootProject.file('debug.keystore')
+      keyAlias 'androiddebugkey'
+      keyPassword 'android'
+      storePassword 'android'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+
+  dataBinding {
+    enabled = true
+  }
+}
+
+dependencies {
+  implementation project(':router')
+
+  implementation project(':main1-router')
+  implementation project(':main1')
+
+  implementation project(':sub1-router')
+  implementation project(':sub1')
+
+  implementation Libs.kotlin
+  implementation Libs.appcompat
+  implementation Libs.ktx
+
+  implementation Libs.constraintlayout
+  implementation Libs.recyclerview
+  implementation Libs.swiperefreshlayout
+
+  implementation Libs.coroutine
+  implementation Libs.ui_coroutine
+
+  implementation Libs.activityx
+  implementation Libs.fragmentx
+
+  implementation Libs.dagger
+  kapt Libs.dagger_processor
+  implementation Libs.dagger_android
+  kapt Libs.dagger_android_processor
+  implementation Libs.dagger_android_support
+}

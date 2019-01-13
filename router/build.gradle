@@ -14,4 +14,11 @@ android {
 
 dependencies {
   implementation Libs.kotlin
+
+  implementation Libs.dagger
+  kapt Libs.dagger_processor
+
+  implementation Libs.appcompat
+
+  implementation Libs.dagger_android
 }

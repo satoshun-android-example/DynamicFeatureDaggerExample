@@ -2,8 +2,10 @@ package com.github.satoshun.example.feature.main
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
 import com.github.satoshun.example.app.App
 import com.github.satoshun.example.app.ModuleComponent
+import com.github.satoshun.example.app.ModuleInjection
 import com.github.satoshun.example.app.ModuleRootActivity
 import javax.inject.Inject
 
@@ -18,6 +20,12 @@ class MainActivity : ModuleRootActivity() {
       val intent = subRouter.routeTo(this)
       startActivity(intent)
     }
+
+    // test Fragment with Dagger
+    supportFragmentManager
+      .beginTransaction()
+      .add(MainFragment(), "main-fragment")
+      .commit()
   }
 
   override val moduleComponent: ModuleComponent
@@ -25,4 +33,13 @@ class MainActivity : ModuleRootActivity() {
       .builder()
       .appComponent(App.appComponent())
       .build()
+}
+
+class MainFragment : Fragment() {
+  @Inject lateinit var router: AppRouter
+
+  override fun onActivityCreated(savedInstanceState: Bundle?) {
+    super.onActivityCreated(savedInstanceState)
+    ModuleInjection.inject(this)
+  }
 }

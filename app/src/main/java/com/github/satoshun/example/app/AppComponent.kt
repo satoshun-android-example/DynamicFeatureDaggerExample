@@ -4,7 +4,6 @@ import com.github.satoshun.example.CoreComponent
 import com.github.satoshun.example.feature.main.RouterBuilder
 import dagger.Component
 import dagger.Module
-import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
@@ -18,8 +17,7 @@ import javax.inject.Singleton
     RouterBuilder::class
   ]
 )
-internal interface AppComponent : AndroidInjector<AppActivity>,
-  ModuleComponent {
+internal interface AppComponent : ModuleComponent {
   @Component.Builder
   interface Builder {
     fun appComponent(module: CoreComponent): Builder
@@ -29,6 +27,15 @@ internal interface AppComponent : AndroidInjector<AppActivity>,
 
 @Module
 internal interface AppBuilder {
-  @ContributesAndroidInjector
+  @ContributesAndroidInjector(
+    modules = [
+      AppActivityModule::class
+    ]
+  )
   fun contributeAppActivity(): AppActivity
+}
+
+@Module
+internal interface AppActivityModule {
+  @ContributesAndroidInjector fun contributeAppFragme(): AppFragment
 }

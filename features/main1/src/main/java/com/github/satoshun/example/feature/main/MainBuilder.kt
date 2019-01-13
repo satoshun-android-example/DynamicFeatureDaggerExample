@@ -1,12 +1,11 @@
 package com.github.satoshun.example.feature.main
 
-import android.app.Activity
 import com.github.satoshun.example.CoreComponent
+import com.github.satoshun.example.app.ModuleComponent
 import dagger.Component
 import dagger.Module
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
-import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
@@ -19,13 +18,14 @@ import javax.inject.Singleton
     RouterBuilder::class
   ]
 )
-internal interface MainAppComponent : AndroidInjector<MainActivity> {
+internal interface MainAppComponent : AndroidInjector<MainActivity>,
+  ModuleComponent {
   @Component.Builder
-  abstract class Builder : AndroidInjector.Builder<MainActivity>() {
+  abstract class Builder {
     abstract fun appComponent(module: CoreComponent): Builder
-  }
 
-  val dispatching: DispatchingAndroidInjector<Activity>
+    abstract fun build(): MainAppComponent
+  }
 }
 
 @Module(

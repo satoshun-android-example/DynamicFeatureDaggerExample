@@ -1,1 +1,1 @@
-# Multi Module Activities transitions example
+# Multi Module Activities transitions example for dynamic module

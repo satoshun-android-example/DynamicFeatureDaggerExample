@@ -10,8 +10,7 @@ import javax.inject.Inject
 
 abstract class ModuleRootActivity : AppCompatActivity(),
   HasModuleInjector {
-  @Inject
-  lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
+  @Inject lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
   private lateinit var injector: ModuleInjector
 

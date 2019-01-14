@@ -1,7 +1,6 @@
 package com.github.satoshun.example.app
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import com.github.satoshun.example.feature.main.MainRouter
 import kotlinx.android.synthetic.main.app_act.*
 import javax.inject.Inject
@@ -30,13 +29,4 @@ class AppActivity : ModuleRootActivity() {
       .builder()
       .appComponent(App.appComponent())
       .build()
-}
-
-class AppFragment : Fragment() {
-  @Inject lateinit var mainRouter: MainRouter
-
-  override fun onActivityCreated(savedInstanceState: Bundle?) {
-    super.onActivityCreated(savedInstanceState)
-    ModuleInjection.inject(this)
-  }
 }

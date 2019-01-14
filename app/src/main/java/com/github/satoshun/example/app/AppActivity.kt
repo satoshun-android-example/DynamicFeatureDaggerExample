@@ -1,7 +1,7 @@
 package com.github.satoshun.example.app
 
 import android.os.Bundle
-import com.github.satoshun.example.feature.main.MainRouter
+import com.github.satoshun.example.router.MainRouter
 import kotlinx.android.synthetic.main.app_act.*
 import javax.inject.Inject
 

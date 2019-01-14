@@ -1,7 +1,7 @@
 package com.github.satoshun.example.app
 
 import com.github.satoshun.example.CoreComponent
-import com.github.satoshun.example.feature.main.RouterBuilder
+import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component
 import dagger.Module
 import dagger.android.ContributesAndroidInjector

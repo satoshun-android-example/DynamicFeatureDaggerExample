@@ -1,4 +1,4 @@
-package com.github.satoshun.example.feature.main
+package com.github.satoshun.example.router
 
 import android.content.Context
 import android.content.Intent

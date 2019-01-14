@@ -1,6 +1,6 @@
 package com.github.satoshun.example.app
 
-import com.github.satoshun.example.feature.main.MainRouter
+import com.github.satoshun.example.router.MainRouter
 import javax.inject.Inject
 
 class AppFragment : ModuleChildFragment() {

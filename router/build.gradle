@@ -19,6 +19,4 @@ dependencies {
   kapt Libs.dagger_processor
 
   implementation Libs.appcompat
-
-  implementation Libs.dagger_android
 }

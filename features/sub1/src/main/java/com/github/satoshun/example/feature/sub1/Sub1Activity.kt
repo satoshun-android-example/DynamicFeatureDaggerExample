@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.github.satoshun.example.app.App
 import com.github.satoshun.example.app.ModuleComponent
 import com.github.satoshun.example.app.ModuleRootActivity
-import com.github.satoshun.example.feature.main.AppRouter
+import com.github.satoshun.example.router.AppRouter
 import kotlinx.android.synthetic.main.sub1_act.*
 import javax.inject.Inject
 

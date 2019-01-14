@@ -3,8 +3,8 @@ package com.github.satoshun.example.feature.main
 import android.os.Bundle
 import android.view.View
 import com.github.satoshun.example.app.App
-import com.github.satoshun.example.app.ModuleComponent
-import com.github.satoshun.example.app.ModuleRootActivity
+import com.github.satoshun.example.di.ModuleComponent
+import com.github.satoshun.example.di.ModuleRootActivity
 import com.github.satoshun.example.router.Sub1Router
 import javax.inject.Inject
 

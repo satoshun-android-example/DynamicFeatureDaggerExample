@@ -9,6 +9,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
+import javax.inject.Scope
 
 abstract class ModuleRootActivity : AppCompatActivity(),
   HasModuleInjector {
@@ -70,6 +71,12 @@ abstract class ModuleChildFragment : Fragment() {
 }
 
 interface HasModuleInjector : HasSupportFragmentInjector
+
+
+@Scope
+@MustBeDocumented
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ModuleScope
 
 /*
  * Copyright (C) 2017 The Dagger Authors.

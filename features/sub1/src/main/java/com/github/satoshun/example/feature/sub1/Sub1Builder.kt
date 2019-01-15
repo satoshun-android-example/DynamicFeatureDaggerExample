@@ -2,15 +2,15 @@ package com.github.satoshun.example.feature.sub1
 
 import com.github.satoshun.example.core.CoreComponent
 import com.github.satoshun.example.di.ModuleActivityComponent
+import com.github.satoshun.example.di.ModuleScope
 import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component
 import dagger.Module
 import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import javax.inject.Singleton
 
-@Singleton
+@ModuleScope
 @Component(
   dependencies = [CoreComponent::class],
   modules = [

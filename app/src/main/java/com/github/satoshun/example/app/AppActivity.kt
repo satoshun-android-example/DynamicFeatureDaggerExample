@@ -1,6 +1,7 @@
 package com.github.satoshun.example.app
 
 import android.os.Bundle
+import com.github.satoshun.example.core.CoreItem
 import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.di.ModuleRootActivity
 import com.github.satoshun.example.router.MainRouter
@@ -9,6 +10,7 @@ import javax.inject.Inject
 
 class AppActivity : ModuleRootActivity() {
   @Inject lateinit var mainRouter: MainRouter
+  @Inject lateinit var coreItem: CoreItem
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

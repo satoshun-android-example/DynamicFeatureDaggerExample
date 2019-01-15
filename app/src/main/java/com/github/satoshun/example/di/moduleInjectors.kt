@@ -14,7 +14,7 @@ abstract class ModuleRootActivity : AppCompatActivity(),
   HasModuleInjector {
   @Inject lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
-  private lateinit var injector: ModuleInjector
+  private lateinit var injector: ModuleActivityInjector
 
   override fun onCreate(savedInstanceState: Bundle?) {
     injector = moduleComponent.moduleInjector
@@ -22,10 +22,44 @@ abstract class ModuleRootActivity : AppCompatActivity(),
     super.onCreate(savedInstanceState)
   }
 
-  protected abstract val moduleComponent: ModuleComponent
+  protected abstract val moduleComponent: ModuleActivityComponent
 
   override fun supportFragmentInjector(): AndroidInjector<Fragment> =
     fragmentInjector
+}
+
+class ModuleActivityInjector @Inject constructor(
+  internal val activity: DispatchingAndroidInjector<Activity>
+)
+
+interface ModuleActivityComponent {
+  val moduleInjector: ModuleActivityInjector
+}
+
+abstract class ModuleRootFragment : Fragment(),
+  HasModuleInjector {
+  @Inject lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
+
+  private lateinit var injector: ModuleFragmentInjector
+
+  override fun onCreate(savedInstanceState: Bundle?) {
+    injector = moduleComponent.moduleInjector
+    injector.fragment.inject(this)
+    super.onCreate(savedInstanceState)
+  }
+
+  protected abstract val moduleComponent: ModuleFragmentComponent
+
+  override fun supportFragmentInjector(): AndroidInjector<Fragment> =
+    fragmentInjector
+}
+
+class ModuleFragmentInjector @Inject constructor(
+  internal val fragment: DispatchingAndroidInjector<Fragment>
+)
+
+interface ModuleFragmentComponent {
+  val moduleInjector: ModuleFragmentInjector
 }
 
 abstract class ModuleChildFragment : Fragment() {
@@ -33,14 +67,6 @@ abstract class ModuleChildFragment : Fragment() {
     ModuleInjection.inject(this)
     super.onAttach(context)
   }
-}
-
-class ModuleInjector @Inject constructor(
-  internal val activity: DispatchingAndroidInjector<Activity>
-)
-
-interface ModuleComponent {
-  val moduleInjector: ModuleInjector
 }
 
 interface HasModuleInjector : HasSupportFragmentInjector

@@ -1,7 +1,7 @@
 package com.github.satoshun.example.feature.sub1
 
 import com.github.satoshun.example.CoreComponent
-import com.github.satoshun.example.di.ModuleComponent
+import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component
 import dagger.Module
@@ -20,7 +20,7 @@ import javax.inject.Singleton
   ]
 )
 internal interface Sub1Component : AndroidInjector<Sub1Activity>,
-  ModuleComponent {
+  ModuleActivityComponent {
   @Component.Builder
   interface Builder {
     fun appComponent(module: CoreComponent): Builder

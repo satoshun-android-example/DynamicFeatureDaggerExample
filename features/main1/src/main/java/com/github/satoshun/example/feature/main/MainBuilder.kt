@@ -1,7 +1,7 @@
 package com.github.satoshun.example.feature.main
 
 import com.github.satoshun.example.CoreComponent
-import com.github.satoshun.example.di.ModuleComponent
+import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component
 import dagger.Module
@@ -18,7 +18,7 @@ import javax.inject.Singleton
     RouterBuilder::class
   ]
 )
-internal interface MainAppComponent : ModuleComponent {
+internal interface MainAppComponent : ModuleActivityComponent {
   @Component.Builder
   interface Builder {
     fun appComponent(module: CoreComponent): Builder

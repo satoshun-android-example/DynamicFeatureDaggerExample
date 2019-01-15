@@ -1,7 +1,7 @@
 package com.github.satoshun.example.app
 
 import android.os.Bundle
-import com.github.satoshun.example.di.ModuleComponent
+import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.di.ModuleRootActivity
 import com.github.satoshun.example.router.MainRouter
 import kotlinx.android.synthetic.main.app_act.*
@@ -26,7 +26,7 @@ class AppActivity : ModuleRootActivity() {
       .commit()
   }
 
-  override val moduleComponent: ModuleComponent
+  override val moduleComponent: ModuleActivityComponent
     get() = DaggerAppComponent
       .builder()
       .appComponent(App.appComponent())

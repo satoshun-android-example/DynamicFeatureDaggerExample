@@ -3,7 +3,7 @@ package com.github.satoshun.example.feature.main
 import android.os.Bundle
 import android.view.View
 import com.github.satoshun.example.app.App
-import com.github.satoshun.example.di.ModuleComponent
+import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.di.ModuleRootActivity
 import com.github.satoshun.example.router.Sub1Router
 import javax.inject.Inject
@@ -27,7 +27,7 @@ class MainActivity : ModuleRootActivity() {
       .commit()
   }
 
-  override val moduleComponent: ModuleComponent
+  override val moduleComponent: ModuleActivityComponent
     get() = DaggerMainAppComponent
       .builder()
       .appComponent(App.appComponent())

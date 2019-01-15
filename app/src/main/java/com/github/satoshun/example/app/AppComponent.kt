@@ -1,6 +1,6 @@
 package com.github.satoshun.example.app
 
-import com.github.satoshun.example.CoreComponent
+import com.github.satoshun.example.core.CoreComponent
 import com.github.satoshun.example.di.ModuleActivityComponent
 import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component

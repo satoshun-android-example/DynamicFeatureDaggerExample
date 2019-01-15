@@ -1,6 +1,7 @@
 package com.github.satoshun.example.feature.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.github.satoshun.example.app.App
 import com.github.satoshun.example.di.ModuleActivityComponent
@@ -30,6 +31,6 @@ class MainActivity : ModuleRootActivity() {
   override val moduleComponent: ModuleActivityComponent
     get() = DaggerMainAppComponent
       .builder()
-      .appComponent(App.appComponent())
+      .appComponent(App.coreComponent())
       .build()
 }

@@ -1,4 +1,4 @@
-package com.github.satoshun.example
+package com.github.satoshun.example.core
 
 import android.content.Context
 import dagger.BindsInstance
@@ -6,7 +6,7 @@ import dagger.Component
 
 @Component
 interface CoreComponent {
-  @dagger.Component.Builder
+  @Component.Builder
   abstract class Builder {
     @BindsInstance abstract fun applicationContext(context: Context): Builder
     abstract fun build(): CoreComponent

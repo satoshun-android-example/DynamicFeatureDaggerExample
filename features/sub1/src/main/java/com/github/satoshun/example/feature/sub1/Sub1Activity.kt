@@ -27,6 +27,6 @@ class Sub1Activity : ModuleRootActivity(),
   override val moduleComponent: ModuleActivityComponent
     get() = DaggerSub1Component
       .builder()
-      .appComponent(App.appComponent())
+      .appComponent(App.coreComponent())
       .build()
 }

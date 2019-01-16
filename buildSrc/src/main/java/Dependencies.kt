@@ -42,7 +42,7 @@ object Libs {
 
   const val retrofit = "com.squareup.retrofit2:retrofit:2.5.0"
 
-  private const val vdagger = "2.20"
+  private const val vdagger = "2.21"
   const val dagger = "com.google.dagger:dagger:$vdagger"
   const val dagger_processor = "com.google.dagger:dagger-compiler:$vdagger"
   const val dagger_android = "com.google.dagger:dagger-android:$vdagger"

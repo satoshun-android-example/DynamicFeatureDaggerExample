@@ -6,7 +6,6 @@ import com.github.satoshun.example.di.ModuleScope
 import com.github.satoshun.example.router.RouterBuilder
 import dagger.Component
 import dagger.Module
-import dagger.android.AndroidInjector
 import dagger.android.ContributesAndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 
@@ -19,8 +18,7 @@ import dagger.android.support.AndroidSupportInjectionModule
     RouterBuilder::class
   ]
 )
-internal interface Sub1Component : AndroidInjector<Sub1Activity>,
-  ModuleActivityComponent {
+internal interface Sub1Component : ModuleActivityComponent {
   @Component.Builder
   interface Builder {
     fun appComponent(module: CoreComponent): Builder

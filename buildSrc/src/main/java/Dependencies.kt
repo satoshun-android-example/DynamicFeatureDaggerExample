@@ -3,12 +3,12 @@ object Vers {
   const val min_sdk = 25
   const val target_sdk = 28
 
-  const val kotlin = "1.3.11"
+  const val kotlin = "1.3.21"
   const val couroutine = "1.1.0"
 }
 
 object Libs {
-  const val android_plugin = "com.android.tools.build:gradle:3.5.0-alpha01"
+  const val android_plugin = "com.android.tools.build:gradle:3.5.0-alpha03"
   const val kotlin_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Vers.kotlin}"
   const val versions_plugin = "com.github.ben-manes:gradle-versions-plugin:0.20.0"
   const val jetifier_plugin = "com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02"
